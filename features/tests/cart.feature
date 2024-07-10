@@ -1,6 +1,6 @@
-# Created by dang at 7/6/24
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature: Tests for Cart functionality
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: Verifies that “Your cart is empty” message is shown on the cart icon
+    Given Open Target main page
+    When Click on Cart icon
+    Then Verify “Your cart is empty” message is shown
