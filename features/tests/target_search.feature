@@ -28,3 +28,8 @@ Scenario Outline: User can search for product
     |tea       |tea                 |
     |cue       |cue                 |
     |speaker   |speaker             |
+
+Scenario: Verify that every product on Target search result page has image and product name
+  Given Open Target main page
+  When Search for cup
+  Then Verify that search results has the product name and an image
