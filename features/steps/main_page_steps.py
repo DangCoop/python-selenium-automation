@@ -24,10 +24,11 @@ def search_product(context, product):
 
 @when('Click on Cart icon')
 def click_cart(context):
-    button = context.driver.wait.until(EC.element_to_be_clickable(CART_ICON_BTN))
-    #context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()\
-    button.click()
-    #sleep(3)
+    context.app.header.cart_btn()
+    # button = context.driver.wait.until(EC.element_to_be_clickable(CART_ICON_BTN))
+    # #context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()\
+    # button.click()
+    # #sleep(3)
 
 @when('Click Sign In')
 def click_sign_in(context):
