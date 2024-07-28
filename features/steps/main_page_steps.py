@@ -4,19 +4,22 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
+SEARCH_FIELD = (By.ID, 'search')
 SEARCH_BTN = (By.XPATH, "//button[@data-test ='@web/Search/SearchButton']")
 CART_ICON_BTN = (By.CSS_SELECTOR, "[data-test='@web/CartIcon']")
 
 
 @given('Open Target main page')
 def open_target(context):
-    context.driver.get('https://www.target.com/')
+    context.app.main_page.open()
+    #context.driver.get('https://www.target.com/')
 
 @when('Search for {product}')
 def search_product(context, product):
-    context.driver.find_element(By.ID, 'search').send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
-    sleep(6) # Can't Replaced this sleep method by ether implicitly or explicitly method! if it possible please help!
+    context.app.header.search()
+    #context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+    #context.driver.find_element(*SEARCH_BTN).click()
+    #sleep(6) # Can't Replaced this sleep method by ether implicitly or explicitly method! if it possible please help!
 
 
 @when('Click on Cart icon')
