@@ -16,7 +16,7 @@ def open_target(context):
 
 @when('Search for {product}')
 def search_product(context, product):
-    context.app.header.search()
+    context.app.header.search_product(product)
     #context.driver.find_element(*SEARCH_FIELD).send_keys(product)
     #context.driver.find_element(*SEARCH_BTN).click()
     #sleep(6) # Can't Replaced this sleep method by ether implicitly or explicitly method! if it possible please help!
@@ -32,12 +32,14 @@ def click_cart(context):
 
 @when('Click Sign In')
 def click_sign_in(context):
-    context.driver.find_element(By.CSS_SELECTOR, "span.sc-58ad44c0-3").click()
+    context.app.header.sing_in_btn()
+    #context.driver.find_element(By.CSS_SELECTOR, "span.sc-58ad44c0-3").click()
     #sleep(7) Replaced by context.driver.implicitly_wait(4)
 
 @then('From right side navigation menu, click Sign In')
 def navigation_menu(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test = accountNav-signIn]").click()
+    context.app.account_side_menu.sign_in_btn()
+    #context.driver.find_element(By.CSS_SELECTOR, "[data-test = accountNav-signIn]").click()
 
 
 @then('Verify header in shown')

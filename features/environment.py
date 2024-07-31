@@ -3,13 +3,15 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 from app.application import Application
 
 def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
+    driver_path = "/Users/dang/Desktop/Careerist/Python_Selenium/python-selenium-automation/chromedriver"
+    #driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
 

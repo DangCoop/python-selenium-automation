@@ -7,7 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 # get the path to the ChromeDriver executable
-driver_path = ChromeDriverManager().install()
+# driver_path = ChromeDriverManager().install()
+driver_path = '/Users/dang/Desktop/Careerist/Python_Selenium/python-selenium-automation/chromedriver'
 
 # create a new Chrome browser instance
 service = Service(driver_path)
