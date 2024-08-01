@@ -36,7 +36,7 @@ def click_sign_in(context):
     #context.driver.find_element(By.CSS_SELECTOR, "span.sc-58ad44c0-3").click()
     #sleep(7) Replaced by context.driver.implicitly_wait(4)
 
-@then('From right side navigation menu, click Sign In')
+@when('From right side navigation menu, click Sign In')
 def navigation_menu(context):
     context.app.account_side_menu.sign_in_btn()
     #context.driver.find_element(By.CSS_SELECTOR, "[data-test = accountNav-signIn]").click()
