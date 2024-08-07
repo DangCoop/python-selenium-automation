@@ -8,6 +8,11 @@ class SignInPage(Page):
     PASS_INPUT_FIELD = (By.ID, 'password')
     SIGN_IN_WITH_PASS = (By.CSS_SELECTOR, "#login")
     SIGN_IN_FORM = (By.CSS_SELECTOR, ".sc-fe064f5c-0")
+    TC_LINK =(By.XPATH, "//a[text()='Target terms and conditions']")
+
+
+    def click_tc_link(self):
+        self.click(*self.TC_LINK)
 
     def verify_sign_in_form(self):
         expected_text = 'Sign into your Target account'
