@@ -6,6 +6,8 @@ from pages.cart_page import CartPage
 from pages.account_side_menu import AccountSideMenu
 from pages.sign_in_page import SignInPage
 from pages.cart_side_menu import CartSideMenu
+from pages.target_app_page import TargetAppPage
+from pages.privacy_policy_page import PrivacyPolicyPage
 
 class Application:
     def __init__(self, driver):
@@ -19,5 +21,7 @@ class Application:
         self.account_side_menu = AccountSideMenu(driver)
         self.sign_in_page = SignInPage(driver)
         self.cart_side_menu = CartSideMenu(driver)
+        self.target_app_page = TargetAppPage(driver)
+        self.privacy_policy_page = PrivacyPolicyPage(driver)
 
 

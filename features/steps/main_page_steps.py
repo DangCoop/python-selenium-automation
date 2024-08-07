@@ -53,3 +53,8 @@ def verify_header_link_amount(context, number):
     links = context.driver.find_elements(By.CSS_SELECTOR, "[id*='utilityNav']")
     assert len(links) == number, f'Expected {number} links, but got {len(links)}'
     print(links)
+    # Make a loop to click all 6 links
+    for i in range(len(links)):
+        links = context.driver.find_elements(By.CSS_SELECTOR, "[id*='utilityNav']")
+        links[i].click()
+        sleep(4)
