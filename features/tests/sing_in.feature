@@ -24,3 +24,11 @@ Feature: Target Sign In feature tests
      Then Verify Terms and Conditions page is opened
      And User can close new window
      And User can switch back to original
+
+Scenario: User want to login with invalid credentials
+    Given Open target main page
+    When Click Sign In
+    And From right side navigation menu, click Sign In
+    And Enter email "veje@gmailod.com" and password "pas220045!"
+    And Click Sign In With Password
+    Then Verify that warning message is shown

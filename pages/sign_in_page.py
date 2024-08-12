@@ -9,7 +9,7 @@ class SignInPage(Page):
     SIGN_IN_WITH_PASS = (By.CSS_SELECTOR, "#login")
     SIGN_IN_FORM = (By.CSS_SELECTOR, ".sc-fe064f5c-0")
     TC_LINK =(By.XPATH, "//a[text()='Target terms and conditions']")
-
+    WARNING_MSG = (By.CSS_SELECTOR, "[data-test='authAlertDisplay']")
 
     def click_tc_link(self):
         self.click(*self.TC_LINK)
@@ -28,3 +28,6 @@ class SignInPage(Page):
 
     def verify_user_login(self):
         self.wait_for_element_disappear(*self.SIGN_IN_FORM)
+
+    def verify_user_cannot_login(self):
+        self.wait_for_element_appear(*self.WARNING_MSG)

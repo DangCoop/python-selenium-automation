@@ -53,7 +53,13 @@ def verify_pp_opened(context):
 def close(context):
     context.app.terms_and_conditions_page.close_page()
 
+
 @then('User can switch back to original')
 def return_to_original_window(context):
     context.app.terms_and_conditions_page.switch_to_window_by_id(context.original_window)
+
+
+@then('Verify that warning message is shown')
+def verify_warning_message(context):
+    context.app.sign_in_page.verify_user_cannot_login()
 
