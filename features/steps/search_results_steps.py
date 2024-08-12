@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from behave import then, given, when
 from time import sleep
 
+
 @then('Verify search results shown for {expected_product}')
 def verify_search_results(context, expected_product):
     context.app.search_results_page.verify_search_results(expected_product)
@@ -33,6 +34,7 @@ def add_product_to_cart(context):
     context.app.cart_side_menu.add_product_to_cart()
     #context.driver.find_element(By.CSS_SELECTOR, "[data-test= 'shippingButton']").click()
 
+
 @then('Verify that the cue is in the cart')
 def verify_cart(context):
     context.app.cart_side_menu.verify_cart()
@@ -59,6 +61,13 @@ def verify_product_name(context):
         assert product_image.get_attribute('src'), f"Product image is missing for {product_name}."
 
 
+@when('Hover favorites icon')
+def hover_fav_icon(context):
+    context.app.search_results_page.hover_fav_icon()
 
+
+@then('Favorites tooltip is shown')
+def verify_fav_tooltip(context):
+    context.app.search_results_page.verify_fav_tooltip()
 
 

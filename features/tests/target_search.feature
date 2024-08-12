@@ -33,3 +33,9 @@ Scenario: Verify that every product on Target search result page has image and p
   Given Open Target main page
   When Search for cup
   Then Verify that search results has the product name and an image
+
+Scenario: User can see favorites tooltip for search result
+  Given Open Target main page
+  When Search for tea
+  And Hover favorites icon
+  Then Favorites tooltip is shown
