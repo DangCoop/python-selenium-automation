@@ -12,6 +12,7 @@ Scenario: User can search for a cue
     Then Verify search results shown for cue
     Then Verify correct search results URL opens for cue
 
+@smoke
 Scenario: User can search for a speaker
     Given Open Target main page
     When Search for speaker
@@ -29,6 +30,7 @@ Scenario Outline: User can search for product
     |cue       |cue                 |
     |speaker   |speaker             |
 
+ @smoke
 Scenario: Verify that every product on Target search result page has image and product name
   Given Open Target main page
   When Search for cup
