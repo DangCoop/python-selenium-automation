@@ -10,7 +10,8 @@ from selenium.webdriver.chrome.options import Options
 from app.application import Application
 from support.logger import logger
 
-
+# Command to run tests with Allure & Behave:
+# behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/target_search.feature
 
 def browser_init(context):
     """
