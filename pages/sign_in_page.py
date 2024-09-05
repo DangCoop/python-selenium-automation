@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import Page
 from time import sleep
 
+
 class SignInPage(Page):
     SIGN_IN_PAGE_MSG = (By.CSS_SELECTOR, "h1.sc-fe064f5c-0")
     EMAIL_INPUT_FIELD = (By.ID, 'username')

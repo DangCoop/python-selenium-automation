@@ -11,6 +11,7 @@ from pages.privacy_policy_page import PrivacyPolicyPage
 from pages.terms_and_conditions_page import TermsAndConditionsPage
 from pages.help_page import HelpPage
 
+
 class Application:
     def __init__(self, driver):
 
